@@ -6978,6 +6978,15 @@
                 e.target.classList.toggle("btn-aktive");
             }));
         }
+        var blocks = document.getElementsByClassName("columnheader-middle__button");
+        [].forEach.call(blocks, (function(block) {
+            block.onclick = function() {
+                [].forEach.call(blocks, (function(block) {
+                    block.className = "columnheader-middle__button btn-wight-small";
+                }));
+                block.className = "columnheader-middle__button btn-wight-small filter-active";
+            };
+        }));
         window["FLS"] = true;
         isWebp();
         menuInit();
